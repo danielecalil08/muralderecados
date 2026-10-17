@@ -6,6 +6,7 @@
     <p><%= message.created_at %></p>
     <p><%= message.author %></p>
     <%= link_to "Editar", edit_message_path(message) %>
+    <%= button_to "Apagar", message, method: :delete, form: {data: {turbo_confirm: "Quer mesmo apagar esse recado?"}}%>
     <p>________________________</p>
     </div>
 <%end%>
