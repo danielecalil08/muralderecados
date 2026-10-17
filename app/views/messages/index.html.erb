@@ -1,10 +1,11 @@
 <h1>mural de recados</h1>
 <%= link_to "Novo recado", new_message_path %>
 <% @messages.each do |message| %>
-<div>
-<p><%= message.content %></p>
-<p><%= message.created_at %></p>
-<p><%= message.author %></p>
-<p>________________________</p>
-</div>
+    <div>
+    <p><%= message.content %></p>
+    <p><%= message.created_at %></p>
+    <p><%= message.author %></p>
+    <%= link_to "Editar", edit_message_path(message) %>
+    <p>________________________</p>
+    </div>
 <%end%>

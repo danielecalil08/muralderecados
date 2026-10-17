@@ -1,0 +1,17 @@
+<h1>Editar recado</h1>
+<%@message.errors.full_messages.each do |error| %>
+<p><%= error%></p>
+<%end%>
+<%= form_with model: @message do |form| %>
+  <div>
+    <%= form.label :author, "Seu nome" %>
+    <%= form.text_field :author %>
+  </div>
+  <div>
+    <%= form.label :content, "Recado" %>
+    <%= form.text_area :content %>
+  </div>
+  <%= form.submit "Atualizar recado" %>
+<% end %>
+
+<%= link_to "Voltar", root_path %>

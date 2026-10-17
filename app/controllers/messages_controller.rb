@@ -10,10 +10,16 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.valid?
+      @message.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @message = Message.find(params[:id])
+
   end
 
   private
