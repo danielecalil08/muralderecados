@@ -1,0 +1,6 @@
+<h1>mural de recados</h1>
+<% @messages.each do |message| %>
+<%= message.author %>
+<%= message.content %>
+<%= message.created_at %>
+<%end%>
